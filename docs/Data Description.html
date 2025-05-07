@@ -100,13 +100,12 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./Introduction.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
-    <span class="nav-link">
-<span class="menu-text">Packages Required</span>
-    </span>
+    <a class="nav-link" href="./Packages Required.html"> 
+<span class="menu-text">Package Required</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Data Preparation.html"> 
@@ -114,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./EDA.html"> 
-<span class="menu-text">EDA</span></a>
+<span class="menu-text">Exploratory Data Analysis</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Summary.html"> 
@@ -158,8 +157,8 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-be32c0026d4a1e1f5f7f" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-be32c0026d4a1e1f5f7f">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"],["historical_spending_grouped","historical_spending_grouped","historical_spending_grouped","historical_spending_grouped","historical_spending_grouped","historical_spending_grouped","gifts_age_grouped","gifts_age_grouped","gifts_age_grouped","gifts_age_grouped","gifts_age_grouped","gifts_gender_grouped","gifts_gender_grouped","gifts_gender_grouped","gifts_gender_grouped"],["Year","PercentCelebrating","PerPerson","ExperientialSpending","PracticalSpending","TotalSpending","Age","SpendingCelebrating","ExperientialSpending","PracticalSpending","TotalSpending","Gender","ExperientialSpending","PracticalSpending","TotalSpending"],["numeric","numeric","numeric","numeric","numeric","numeric","character","numeric","numeric","numeric","numeric","character","numeric","numeric","numeric"],["Year (2010 - 2022)","Percentage of population celebrating Valentine's Day","Average spending per person","Sum of EveningOut, Flowers, Candy and GreetingCards","Sum of Jewelry, Clothing and GiftCards","Sum of ExperientialSpending and PracticalSpending","Age group category (e.g., \"18-24\", \"25-34\", etc.)","Percentage of each age group celebrating Valentine's Day","Sum of EveningOut, Flowers, Candy and GreetingCards","Sum of Jewelry, Clothing and GiftCards","Sum of ExperientialSpending and PracticalSpending","Gender category (e.g., \"Men\", \"Women\")","Sum of EveningOut, Flowers, Candy and GreetingCards","Sum of Jewelry, Clothing and GiftCards","Sum of ExperientialSpending and PracticalSpending"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Dataset<\/th>\n      <th>Variable<\/th>\n      <th>Class<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"Dataset","targets":1},{"name":"Variable","targets":2},{"name":"Class","targets":3},{"name":"Description","targets":4}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-e0751c58c171ba7d8e28" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e0751c58c171ba7d8e28">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"],["historical_spending_grouped","historical_spending_grouped","historical_spending_grouped","historical_spending_grouped","historical_spending_grouped","historical_spending_grouped","gifts_age_grouped","gifts_age_grouped","gifts_age_grouped","gifts_age_grouped","gifts_age_grouped","gifts_gender_grouped","gifts_gender_grouped","gifts_gender_grouped","gifts_gender_grouped"],["Year","PercentCelebrating","PerPerson","ExperientialSpending","PracticalSpending","TotalSpending","Age","SpendingCelebrating","ExperientialSpending","PracticalSpending","TotalSpending","Gender","ExperientialSpending","PracticalSpending","TotalSpending"],["numeric","numeric","numeric","numeric","numeric","numeric","character","numeric","numeric","numeric","numeric","character","numeric","numeric","numeric"],["Year (2010 - 2022)","Percentage of population celebrating Valentine's Day","Average spending per person","Sum of EveningOut, Flowers, Candy and GreetingCards","Sum of Jewelry, Clothing and GiftCards","Sum of ExperientialSpending and PracticalSpending","Age group category (e.g., \"18-24\", \"25-34\", etc.)","Percentage of each age group celebrating Valentine's Day","Sum of EveningOut, Flowers, Candy and GreetingCards","Sum of Jewelry, Clothing and GiftCards","Sum of ExperientialSpending and PracticalSpending","Gender category (e.g., \"Men\", \"Women\")","Sum of EveningOut, Flowers, Candy and GreetingCards","Sum of Jewelry, Clothing and GiftCards","Sum of ExperientialSpending and PracticalSpending"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Dataset<\/th>\n      <th>Variable<\/th>\n      <th>Class<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"Dataset","targets":1},{"name":"Variable","targets":2},{"name":"Class","targets":3},{"name":"Description","targets":4}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 
@@ -238,7 +237,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/8c91a033-a7dc-42af-afff-8ba2f92b7179\.netlify\.app\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
