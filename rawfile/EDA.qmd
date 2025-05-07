@@ -1,0 +1,239 @@
+---
+title: "Exploratory Data Analysis"
+format: html
+author: "Baoyue Xing & Ruining Yang & Yan Wang"
+affiliation: "University of Colorado Denver"
+---
+::: {.panel-tabset}
+```{r,echo = FALSE}
+library(plotly)
+
+# Import datasets directly from GitHub
+
+historical_spending <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2024/2024-02-13/historical_spending.csv')
+gifts_age <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2024/2024-02-13/gifts_age.csv')
+gifts_gender <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2024/2024-02-13/gifts_gender.csv')
+
+historical_spending_grouped <- historical_spending |>
+  transform(
+    ExperientialSpending = EveningOut + Flowers + Candy + GreetingCards,
+    PracticalSpending = Jewelry + Clothing + GiftCards
+  ) |>
+  subset(select = c(Year, PercentCelebrating, PerPerson, ExperientialSpending, PracticalSpending))
+
+historical_spending_grouped$TotalSpending <- historical_spending_grouped$ExperientialSpending +
+                                              historical_spending_grouped$PracticalSpending
+
+gifts_age_grouped <- gifts_age |>
+  transform(
+    ExperientialSpending = EveningOut + Flowers + Candy + GreetingCards,
+    PracticalSpending = Jewelry + Clothing + GiftCards
+  ) |>
+  subset(select = c(Age, SpendingCelebrating, ExperientialSpending, PracticalSpending))
+
+gifts_age_grouped$TotalSpending <- gifts_age_grouped$ExperientialSpending +
+                                   gifts_age_grouped$PracticalSpending
+
+gifts_gender_grouped <- gifts_gender |>
+  transform(
+    ExperientialSpending = EveningOut + Flowers + Candy + GreetingCards,
+    PracticalSpending = Jewelry + Clothing + GiftCards
+  ) |>
+  subset(select = c(Gender, ExperientialSpending, PracticalSpending))
+
+gifts_gender_grouped$TotalSpending <- gifts_gender_grouped$ExperientialSpending +
+                                      gifts_gender_grouped$PracticalSpending
+```
+
+### Q1
+
+- Sub-question1: **Did a major external event shift national Valentine's Day spending behavior?**
+
+- Data source: `historical_spending`
+
+- Figure description:
+
+Plot1: Show the changing trend of Per Person's Valentine's Day expenditure from 2010 to 2022.
+
+Plot2: Show the changes in the proportion of people celebrating during the same period (PercentCelebrating).
+
+Plot3: Compare Experiential and Practical expenditures.
+
+Plot4: Use a stacked chart to show the relative proportions of the three expenditures and the total expenditure.
+
+- Summary of Findings based on following four graphs:
+
+Between 2010 and 2019, both the percentage of people celebrating Valentine's Day and the average spending per person steadily increased. However, starting from 2019, which we define as the onset of the COVID-19 pandemic’s influence, we observe a marked behavioral shift:
+
+1.Experiential spending (e.g., dining out, flowers) declined from 2019 to 2021.
+
+2. Meanwhile, practical spending (e.g., gift cards, clothing) increased, especially in 2020 and 2022.
+
+3.Despite a drop in celebrators, total per-person spending surged in 2020 and remained elevated.
+
+**This pattern suggests a reallocation of budget rather than a reduction in gift-giving, likely due to pandemic-induced restrictions on experiences and greater emphasis on tangible, useful items.**
+
+```{r}
+plot_ly(historical_spending_grouped, x = ~Year) |>
+  add_trace(y = ~PerPerson, name = "PerPerson", type = 'scatter', mode = 'lines+markers') |>
+  layout(title = "Valentine's Day Spending per Person Over Time (2010 - 2022)",
+         xaxis = list(title = "Year"),
+         yaxis = list(title = "Spending (USD)"),
+         legend = list(title = list(text = "Category")))
+```
+
+```{r}
+plot_ly(historical_spending_grouped, x = ~Year) |>
+  add_trace(y = ~PercentCelebrating, name = "PercentCelebrating", type = 'scatter', mode = 'lines+markers') |>
+  layout(title = "Percentage of Population Celebrating Valentine's Day (2010–2022)",
+         xaxis = list(title = "Year"),
+         yaxis = list(title = "Percentage"),
+         legend = list(title = list(text = "Category")))
+```
+
+```{r}
+plot_ly(historical_spending_grouped, x = ~Year) |>
+  add_trace(y = ~ExperientialSpending, name = "ExperientialSpending", type = 'scatter', mode = 'lines+markers') |>
+  add_trace(y = ~PracticalSpending, name = "PracticalSpending", type = 'scatter', mode = 'lines+markers') |>
+  layout(title = "Experiential vs. Practical Valentine's Day Spending (2010–2022)",
+         xaxis = list(title = "Year", tickmode = "linear", dtick = 1),
+         yaxis = list(title = "Spending (USD)"),
+         legend = list(title = list(text = "Category")))
+```
+
+```{r}
+plot_ly(historical_spending_grouped, x = ~Year, y = ~ExperientialSpending, type = 'bar', name = 'ExperientialSpending') |>
+  add_trace(y = ~PracticalSpending, name = 'PracticalSpending', type = 'bar') |>
+  add_trace(y = ~TotalSpending, name = 'TotalSpending', type = 'scatter', mode = 'lines+markers', line = list(color = 'black')) |>
+    layout(
+    barmode = 'stack',
+    title = "Valentine's Day Spending by Category (2010–2022)",
+    xaxis = list(title = "Year", tickmode = "linear", dtick = 1),
+    yaxis = list(title = "Spending (USD)"),
+    legend = list(title = list(text = "Category"))
+  )
+```
+
+### Q2
+
+- Sub-question2: **Do different age groups tend to be more romantic or practical in their Valentine's Day spending?**
+
+- Data source: `gifts_age`
+
+- Figure description: 
+
+Plot5: Show the proportion of people celebrating Valentine's Day in different age groups.
+
+Plot6: Reflect the preferences of different age groups in terms of "Experiential" and "Practical" expenditures.
+
+Plot7: Show the total expenditure structure for each age group.
+
+- Summary of Findings based on following three graphs:
+
+There are clear generational differences in both participation and spending behavior for Valentine’s Day.
+
+1.Younger age groups, especially 18–24 and 25–34, are more likely to celebrate the holiday and spend more overall.
+
+2.These groups also show a strong preference for experiential spending, suggesting that younger people tend to value romantic experiences such as dining out or giving flowers.
+
+3. Older groups (especially 55+) celebrate less and also focu on experiential gifts.
+
+**This suggests that no matter younger or older, people are more inclined to express emotions through romantic experiential gifts.**
+
+```{r}
+plot_ly(gifts_age_grouped, x = ~Age) |>
+  add_trace(y = ~SpendingCelebrating, name = "PerPerson", type = 'scatter', mode = 'lines+markers') |>
+  layout(title = "Percentage of Each Age Group Celebrating Valentine's Day",
+         xaxis = list(title = "Age"),
+         yaxis = list(title = "Percentage"),
+         legend = list(title = list(text = "Category")))
+```
+
+```{r}
+plot_ly(gifts_age_grouped, x = ~Age) |>
+  add_trace(y = ~ExperientialSpending, name = "ExperientialSpending", type = 'scatter', mode = 'lines+markers') |>
+  add_trace(y = ~PracticalSpending, name = "PracticalSpending", type = 'scatter', mode = 'lines+markers') |>
+  layout(title = "Experiential vs. Practical Valentine's Day Spending for Different Age Groups",
+         xaxis = list(title = "Age", tickmode = "linear", dtick = 1),
+         yaxis = list(title = "Sum Spending"),
+         legend = list(title = list(text = "Category")))
+```
+
+```{r}
+plot_ly(gifts_age_grouped, x = ~Age, y = ~ExperientialSpending, type = 'bar', name = 'ExperientialSpending') |>
+  add_trace(y = ~PracticalSpending, name = 'PracticalSpending', type = 'bar') |>
+  add_trace(y = ~TotalSpending, name = 'TotalSpending', type = 'scatter', mode = 'lines+markers', line = list(color = 'black')) |>
+    layout(
+    barmode = 'stack',
+    title = "Valentine's Day Spending by Category for Different Age Groups",
+    xaxis = list(title = "Age", tickmode = "linear", dtick = 1),
+    yaxis = list(title = "Sum Spending"),
+    legend = list(title = list(text = "Category"))
+  )
+```
+
+### Q3
+
+- Sub-question3: **Does gender influence Valentine’s Day spending preferences?**
+
+- Data source: `gifts_gender`
+
+- Figure description:
+
+plot8: The internal expenditure structure of each man or woman (Experiential vs Practical, as a percentage of their own total expenditure)
+
+Table1: The proportion of expenditure by each group of people in the total total consumption (for example, "Women's Experiential consumption accounts for 32.8% of the total consumption")
+
+- Summary of Findings based on following one graph:
+
+Gender does influence Valentine’s Day spending behavior, but not drastically in structure:
+
+1.Both men and women prioritize experiential gifts, with men allocating a slightly higher proportion of their own spending toward romantic gestures.
+
+2. Men also account for a greater share of total spending across both categories, particularly in experiential gifts.
+
+**This suggests that men tend to invest more overall in Valentine's Day, and are marginally more romance-oriented in their spending proportions. Meanwhile, women’s spending is slightly more balanced, with a modest tilt toward experiential gifts.**
+
+```{r}
+plot_ly(gifts_gender_grouped, x = ~Gender, y = ~ExperientialSpending, type = 'bar',
+        name = 'ExperientialSpending',
+        text = ~paste0(round(ExperientialSpending / TotalSpending * 100, 1), "%"),
+        textposition = 'inside') |>
+  add_trace(y = ~PracticalSpending, name = 'PracticalSpending', type = 'bar',
+            text = ~paste0(round(PracticalSpending / TotalSpending * 100, 1), "%"),
+            textposition = 'inside') |>
+  add_trace(y = ~TotalSpending, name = 'TotalSpending', type = 'scatter', mode = 'markers',
+            marker = list(color = 'black', size = 3)) |>
+  layout(
+    barmode = 'stack',
+    title = "Valentine's Day Spending Patterns by Gender",
+    xaxis = list(title = "Gender", tickmode = "linear", dtick = 1),
+    yaxis = list(title = "Sum Spending"),
+    legend = list(title = list(text = "Category"))
+  )
+```
+```{r}
+library(knitr)
+# Build a 2x2 matrix for Experiential and Practical Spending
+spending_matrix <- rbind(
+  ExperientialSpending = gifts_gender_grouped$ExperientialSpending,
+  PracticalSpending = gifts_gender_grouped$PracticalSpending
+)
+colnames(spending_matrix) <- gifts_gender_grouped$Gender
+
+# Compute the grand total across the entire matrix
+total_spending_all <- sum(spending_matrix)
+
+# Use apply() to compute percentages
+percent_matrix <- apply(spending_matrix, c(1, 2), function(x) round(x / total_spending_all * 100, 1))
+
+# Display as a formatted table
+kable(percent_matrix, caption = "Percent of Total Spending by Gender and Type")
+```
+
+:::
+
+
+
+
+

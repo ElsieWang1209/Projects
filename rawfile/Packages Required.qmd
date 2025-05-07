@@ -1,0 +1,34 @@
+---
+title: "Package Required"
+format: html
+author: "Baoyue Xing & Ruining Yang & Yan Wang"
+affiliation: "University of Colorado Denver"
+---
+::: {.panel-tabset}
+### Package used
+```{r, message=FALSE}
+library(DT)
+library(readxl)
+library(readr)
+library(tidyverse)
+library(dplyr)
+library(plotly)
+library(knitr)
+```
+
+### Explaination
+- `DT`: Be used to create interactive HTML tables in R Markdown or Quarto documents. 
+
+- `readxl`: Allow to read Excel files (.xls, .xlsx) into R without needing external dependencies like Java or Excel itself. It's especially helpful for importing structured spreadsheet data efficiently.
+
+- `readr`: Be used for efficiently reading data files in text formats such as CSV.
+
+- `tidyverse`: This is a collection package that contains multiple core toolkits for data cleaning, transformation, and visualization.
+
+- `dplyr`: Be specifically used for processing data frames (such as filtering, sorting, grouping, aggregation, etc.).
+
+- `plotly`: Be used to create interactive charts (for example, data points can be viewed by hovering the mouse).
+
+- `knitr`: Be used to generate dynamic documents by integrating R code with text (such as in .Rmd or .qmd files). It allows you to embed code chunks that automatically run and output results (tables, plots, values) into the final report.
+
+:::
