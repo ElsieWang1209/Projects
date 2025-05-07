@@ -1,0 +1,16 @@
+---
+title: "Summary"
+format: html
+author: "Baoyue Xing & Ruining Yang & Yan Wang"
+affiliation: "University of Colorado Denver"
+---
+
+This analysis set out to explore how external events and demographic factors—particularly age and gender—affect Valentine’s Day spending behavior in the United States. The motivation stems from a broader interest in understanding how personal characteristics and societal disruptions influence consumer decision-making during culturally significant holidays.
+
+To address this question, we used datasets from TidyTuesday, including `historical_spending`, `gifts_age`, and `gifts_gender`. We cleaned and transformed the data to compute experiential and practical spending categories. Using exploratory data analysis (EDA), we created a series of visualizations (line plots, bar charts, and stacked plots) to examine spending trends over time, across age groups, and between genders.
+
+Our analysis revealed several meaningful patterns. First, the COVID-19 pandemic coincided with a shift away from experiential spending and toward practical gifts, suggesting an adaptive response to restricted social activity. Second, younger adults (ages 18–34) are more likely to celebrate Valentine’s Day and tend to spend more, with a clear preference for romantic experiences. Older age groups participate less but still lean toward experiential gifts. Finally, both men and women prioritize experiential spending, but men contribute a larger share to overall holiday spending and allocate a slightly higher proportion to romantic gestures.
+
+These insights have practical relevance for marketers and retailers, who can use them to better tailor campaigns by targeting appropriate age groups and adjusting gift recommendations based on evolving consumer behavior. For consumers, the analysis offers a lens through which to reflect on their own choices in the context of broader societal patterns.
+
+However, this analysis has limitations. Most notably, the `gifts_age` and `gifts_gender` datasets provide only percentage-based figures rather than raw expenditure amounts. As a result, the classification of spending into experiential and practical categories was based on the cumulative sum of percentage values rather than exact monetary figures. This introduces potential inaccuracies in interpreting absolute spending patterns. Additionally, the use of aggregate data limits our ability to control for individual-level variation or other confounding factors. Future work could benefit from access to raw transactional or survey microdata, enabling more precise modeling and deeper insights into consumer behavior.
