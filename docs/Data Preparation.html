@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Baoyue Xing Ruining Yang Yan Wang">
+<meta name="author" content="Baoyue Xing &amp; Ruining Yang &amp; Yan Wang">
 
 <title>Data Preparation – Final project</title>
 <style>
@@ -136,12 +136,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./Introduction.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Packages Required.html"> 
-<span class="menu-text">Packages Required</span></a>
+<span class="menu-text">Package Required</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./Data Preparation.html" aria-current="page"> 
@@ -149,11 +149,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./EDA.html"> 
-<span class="menu-text">EDA</span></a>
+<span class="menu-text">Exploratory Data Analysis</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Summary.html"> 
-<span class="menu-text">Summary</span></a>
+<span class="menu-text">Summary.html</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -184,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Baoyue Xing Ruining Yang Yan Wang </p>
+             <p>Baoyue Xing &amp; Ruining Yang &amp; Yan Wang </p>
           </div>
   </div>
     
@@ -208,45 +208,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import datasets directly from GitHub</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>historical_spending <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2024/2024-02-13/historical_spending.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 13 Columns: 10
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-dbl (10): Year, PercentCelebrating, PerPerson, Candy, Flowers, Jewelry, Gree...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gifts_age <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2024/2024-02-13/gifts_age.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 6 Columns: 9
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (1): Age
-dbl (8): SpendingCelebrating, Candy, Flowers, Jewelry, GreetingCards, Evenin...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gifts_gender <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2024/2024-02-13/gifts_gender.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 2 Columns: 9
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (1): Gender
-dbl (8): SpendingCelebrating, Candy, Flowers, Jewelry, GreetingCards, Evenin...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>historical_spending <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2024/2024-02-13/historical_spending.csv'</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>gifts_age <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2024/2024-02-13/gifts_age.csv'</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>gifts_gender <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2024/2024-02-13/gifts_gender.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>After our observation, we did not find missing value and extreme value, so we use it without cleaning the data for the following combination.</li>
 </ul>
 <p>The original three datasets: historical_spending have 10 variables: Year, PercentCelebrating, PerPerson, Candy, Flowers, Jewelry, GreetingCards, EveningOut, Clothing, Giftcards. Gift_age have 9 variables: Age, SpedingCelebrating, Candy, Flowers, Jewelry, GreetingCards, EverningOut, Clothing, Giftcards. Gift_gender have 9 variables: Gender, SpedingCelebrating, Candy, Flowers, Jewelry, GreetingCards, EverningOut, Clothing, Giftcards</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span> <span class="fu">glimpse</span>(historical_spending)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span> <span class="fu">glimpse</span>(historical_spending)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 13
 Columns: 10
@@ -263,7 +234,7 @@ $ GiftCards          &lt;dbl&gt; 8.42, 11.21, 8.43, 10.23, 9.00, 11.05, 12.52, 1
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span> <span class="fu">glimpse</span>(gifts_age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span> <span class="fu">glimpse</span>(gifts_age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 6
 Columns: 9
@@ -279,7 +250,7 @@ $ GiftCards           &lt;dbl&gt; 23, 19, 22, 23, 20, 20</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span> <span class="fu">glimpse</span>(gifts_gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span> <span class="fu">glimpse</span>(gifts_gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 2
 Columns: 9
@@ -297,48 +268,48 @@ $ GiftCards           &lt;dbl&gt; 18, 24</code></pre>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <ul>
-<li>Because the problem we want to study is whether people pay more attention to short-term experiential items or long-term practical gifts, we classified the gifts into experiential and practical types according to the length of their service life. The experiential gifts types include: <code>evening_out</code>, <code>flowers</code>, <code>candy</code>, <code>greeting_cards</code>. The practical types include <code>jewelry</code>, <code>clothing</code>, <code>giftcards</code>. Then form three new dataset: historaical_spending_grouped, gifts_age_grouped, gifts_gender_grouped</li>
+<li>Because the problem we want to study is whether people pay more attention to short-term experiential items or long-term practical gifts, we classified the gifts into experiential and practical types according to the length of their service life. The experiential gifts types include: <code>evening_out</code>, <code>flowers</code>, <code>candy</code>, <code>greeting_cards</code>. The practical types include <code>jewelry</code>, <code>clothing</code>, <code>giftcards</code>. Then form three new dataset: <code>historaical_spending_grouped</code>, <code>gifts_age_grouped</code>, <code>gifts_gender_grouped</code>. Then we calculate the total spending by summing the cost of experiential gifts and practical gifts.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>historical_spending_grouped <span class="ot">&lt;-</span> historical_spending <span class="sc">|&gt;</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transform</span>(</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">ExperientialSpending =</span> EveningOut <span class="sc">+</span> Flowers <span class="sc">+</span> Candy <span class="sc">+</span> GreetingCards,</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">PracticalSpending =</span> Jewelry <span class="sc">+</span> Clothing <span class="sc">+</span> GiftCards</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="fu">c</span>(Year, PercentCelebrating, PerPerson, ExperientialSpending, PracticalSpending))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>historical_spending_grouped <span class="ot">&lt;-</span> historical_spending <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transform</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">ExperientialSpending =</span> EveningOut <span class="sc">+</span> Flowers <span class="sc">+</span> Candy <span class="sc">+</span> GreetingCards,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">PracticalSpending =</span> Jewelry <span class="sc">+</span> Clothing <span class="sc">+</span> GiftCards</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="fu">c</span>(Year, PercentCelebrating, PerPerson, ExperientialSpending, PracticalSpending))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>historical_spending_grouped<span class="sc">$</span>TotalSpending <span class="ot">&lt;-</span> historical_spending_grouped<span class="sc">$</span>ExperientialSpending <span class="sc">+</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                                              historical_spending_grouped<span class="sc">$</span>PracticalSpending</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>historical_spending_grouped<span class="sc">$</span>TotalSpending <span class="ot">&lt;-</span> historical_spending_grouped<span class="sc">$</span>ExperientialSpending <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                                              historical_spending_grouped<span class="sc">$</span>PracticalSpending</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>gifts_age_grouped <span class="ot">&lt;-</span> gifts_age <span class="sc">|&gt;</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transform</span>(</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">ExperientialSpending =</span> EveningOut <span class="sc">+</span> Flowers <span class="sc">+</span> Candy <span class="sc">+</span> GreetingCards,</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">PracticalSpending =</span> Jewelry <span class="sc">+</span> Clothing <span class="sc">+</span> GiftCards</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="fu">c</span>(Age, SpendingCelebrating, ExperientialSpending, PracticalSpending))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>gifts_age_grouped <span class="ot">&lt;-</span> gifts_age <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transform</span>(</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">ExperientialSpending =</span> EveningOut <span class="sc">+</span> Flowers <span class="sc">+</span> Candy <span class="sc">+</span> GreetingCards,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">PracticalSpending =</span> Jewelry <span class="sc">+</span> Clothing <span class="sc">+</span> GiftCards</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="fu">c</span>(Age, SpendingCelebrating, ExperientialSpending, PracticalSpending))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>gifts_age_grouped<span class="sc">$</span>TotalSpending <span class="ot">&lt;-</span> gifts_age_grouped<span class="sc">$</span>ExperientialSpending <span class="sc">+</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                                   gifts_age_grouped<span class="sc">$</span>PracticalSpending</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>gifts_age_grouped<span class="sc">$</span>TotalSpending <span class="ot">&lt;-</span> gifts_age_grouped<span class="sc">$</span>ExperientialSpending <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                                   gifts_age_grouped<span class="sc">$</span>PracticalSpending</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>gifts_gender_grouped <span class="ot">&lt;-</span> gifts_gender <span class="sc">|&gt;</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transform</span>(</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">ExperientialSpending =</span> EveningOut <span class="sc">+</span> Flowers <span class="sc">+</span> Candy <span class="sc">+</span> GreetingCards,</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">PracticalSpending =</span> Jewelry <span class="sc">+</span> Clothing <span class="sc">+</span> GiftCards</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="fu">c</span>(Gender, ExperientialSpending, PracticalSpending))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>gifts_gender_grouped <span class="ot">&lt;-</span> gifts_gender <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transform</span>(</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">ExperientialSpending =</span> EveningOut <span class="sc">+</span> Flowers <span class="sc">+</span> Candy <span class="sc">+</span> GreetingCards,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">PracticalSpending =</span> Jewelry <span class="sc">+</span> Clothing <span class="sc">+</span> GiftCards</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="fu">c</span>(Gender, ExperientialSpending, PracticalSpending))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>gifts_gender_grouped<span class="sc">$</span>TotalSpending <span class="ot">&lt;-</span> gifts_gender_grouped<span class="sc">$</span>ExperientialSpending <span class="sc">+</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>                                      gifts_gender_grouped<span class="sc">$</span>PracticalSpending</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>gifts_gender_grouped<span class="sc">$</span>TotalSpending <span class="ot">&lt;-</span> gifts_gender_grouped<span class="sc">$</span>ExperientialSpending <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                                      gifts_gender_grouped<span class="sc">$</span>PracticalSpending</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(historical_spending_grouped)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(historical_spending_grouped)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Year PercentCelebrating PerPerson ExperientialSpending PracticalSpending
 1 2010                 60    103.00                50.60             40.87
@@ -357,7 +328,7 @@ $ GiftCards           &lt;dbl&gt; 18, 24</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gifts_age_grouped)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gifts_age_grouped)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Age SpendingCelebrating ExperientialSpending PracticalSpending
 1 18-24                  51                  194                89
@@ -376,7 +347,7 @@ $ GiftCards           &lt;dbl&gt; 18, 24</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gifts_gender_grouped)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gifts_gender_grouped)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Gender ExperientialSpending PracticalSpending TotalSpending
 1    Men                  178                68           246
@@ -387,8 +358,8 @@ $ GiftCards           &lt;dbl&gt; 18, 24</code></pre>
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-99bbf8da58cb8277d22e" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-99bbf8da58cb8277d22e">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"],["historical_spending_grouped","historical_spending_grouped","historical_spending_grouped","historical_spending_grouped","historical_spending_grouped","historical_spending_grouped","gifts_age_grouped","gifts_age_grouped","gifts_age_grouped","gifts_age_grouped","gifts_age_grouped","gifts_gender_grouped","gifts_gender_grouped","gifts_gender_grouped","gifts_gender_grouped"],["Year","PercentCelebrating","PerPerson","ExperientialSpending","PracticalSpending","TotalSpending","Age","SpendingCelebrating","ExperientialSpending","PracticalSpending","TotalSpending","Gender","ExperientialSpending","PracticalSpending","TotalSpending"],["numeric","numeric","numeric","numeric","numeric","numeric","character","numeric","numeric","numeric","numeric","character","numeric","numeric","numeric"],["Year (2010 - 2022)","Percentage of population celebrating Valentine's Day","Average spending per person","Sum of EveningOut, Flowers, Candy and GreetingCards","Sum of Jewelry, Clothing and GiftCards","Sum of ExperientialSpending and PracticalSpending","Age group category (e.g., \"18-24\", \"25-34\", etc.)","Percentage of each age group celebrating Valentine's Day","Sum of EveningOut, Flowers, Candy and GreetingCards","Sum of Jewelry, Clothing and GiftCards","Sum of ExperientialSpending and PracticalSpending","Gender category (e.g., \"Men\", \"Women\")","Sum of EveningOut, Flowers, Candy and GreetingCards","Sum of Jewelry, Clothing and GiftCards","Sum of ExperientialSpending and PracticalSpending"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Dataset<\/th>\n      <th>Variable<\/th>\n      <th>Class<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"Dataset","targets":1},{"name":"Variable","targets":2},{"name":"Class","targets":3},{"name":"Description","targets":4}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-d3ea5baaaf63722c254a" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d3ea5baaaf63722c254a">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"],["historical_spending_grouped","historical_spending_grouped","historical_spending_grouped","historical_spending_grouped","historical_spending_grouped","historical_spending_grouped","gifts_age_grouped","gifts_age_grouped","gifts_age_grouped","gifts_age_grouped","gifts_age_grouped","gifts_gender_grouped","gifts_gender_grouped","gifts_gender_grouped","gifts_gender_grouped"],["Year","PercentCelebrating","PerPerson","ExperientialSpending","PracticalSpending","TotalSpending","Age","SpendingCelebrating","ExperientialSpending","PracticalSpending","TotalSpending","Gender","ExperientialSpending","PracticalSpending","TotalSpending"],["numeric","numeric","numeric","numeric","numeric","numeric","character","numeric","numeric","numeric","numeric","character","numeric","numeric","numeric"],["Year (2010 - 2022)","Percentage of population celebrating Valentine's Day","Average spending per person","Sum of EveningOut, Flowers, Candy and GreetingCards","Sum of Jewelry, Clothing and GiftCards","Sum of ExperientialSpending and PracticalSpending","Age group category (e.g., \"18-24\", \"25-34\", etc.)","Percentage of each age group celebrating Valentine's Day","Sum of EveningOut, Flowers, Candy and GreetingCards","Sum of Jewelry, Clothing and GiftCards","Sum of ExperientialSpending and PracticalSpending","Gender category (e.g., \"Men\", \"Women\")","Sum of EveningOut, Flowers, Candy and GreetingCards","Sum of Jewelry, Clothing and GiftCards","Sum of ExperientialSpending and PracticalSpending"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Dataset<\/th>\n      <th>Variable<\/th>\n      <th>Class<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"Dataset","targets":1},{"name":"Variable","targets":2},{"name":"Class","targets":3},{"name":"Description","targets":4}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
